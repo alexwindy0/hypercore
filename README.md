@@ -130,13 +130,8 @@ cp .env.example .env
 4. **Set up database:**
 The application will automatically create tables on first run.
 
-**Project name:**
-Hypercore
 
-**Database Password**
-?r,wfRk-NcLD6pk
-
-5. **Run the server:**
+1. **Run the server:**
 ```bash
 python app.py
 ```
