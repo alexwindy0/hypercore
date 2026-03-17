@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Hypercore</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <a href="/" class="logo">HYPER<span>CORE</span></a>
+        
+        <div class="auth-card">
+            <h1>Welcome Back</h1>
+            <p>Sign in to access your account and track your orders</p>
+            
+            <!-- Google Sign-In Button -->
+            <div id="g_id_onload"
+                 data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleGoogleSignIn"
+                 data-auto_prompt="false">
+            </div>
+            
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left"
+                 data-width="100%">
+            </div>
+            
+            <div class="auth-divider">
+                <span>or</span>
+            </div>
+            
+            <p class="auth-note">
+                By signing in, you agree to our <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+        
+        <p class="auth-footer">
+            Don't have an account? <a href="/login.html">Sign up with Google</a>
+        </p>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script>
+        /**
+         * Handle Google Sign In
+         */
+        async function handleGoogleSignIn(response) {
+            try {
+                const apiResponse = await Hypercore.apiRequest('/auth/google', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        access_token: response.credential
+                    })
+                });
+                
+                if (apiResponse.success) {
+                    Hypercore.setToken(apiResponse.token);
+                    Hypercore.setUser(apiResponse.user);
+                    
+                    // Sync cart
+                    await Hypercore.syncCartWithServer();
+                    
+                    // Redirect
+                    const params = new URLSearchParams(window.location.search);
+                    const redirect = params.get('redirect') || 'account';
+                    window.location.href = '/' + redirect + '.html';
+                }
+            } catch (error) {
+                Hypercore.showToast('Sign in failed. Please try again.', 'error');
+            }
+        }
+    </script>
+</body>
+</html>

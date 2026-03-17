@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Hypercore</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="admin.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+</head>
+<body class="admin-page">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <a href="/" class="logo">HYPER<span>CORE</span></a>
+        
+        <nav class="admin-nav">
+            <a href="#dashboard" class="admin-nav-link active" onclick="showSection('dashboard')">
+                <span>📊</span> Dashboard
+            </a>
+            <a href="#products" class="admin-nav-link" onclick="showSection('products')">
+                <span>📦</span> Products
+            </a>
+            <a href="#orders" class="admin-nav-link" onclick="showSection('orders')">
+                <span>🛒</span> Orders
+            </a>
+            <a href="#customers" class="admin-nav-link" onclick="showSection('customers')">
+                <span>👥</span> Customers
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <a href="/" class="admin-nav-link">
+                <span>🏠</span> Back to Store
+            </a>
+            <a href="#" class="admin-nav-link" onclick="Hypercore.logout()">
+                <span>🚪</span> Logout
+            </a>
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+            <h1 id="pageTitle">Dashboard</h1>
+            <div class="admin-user">
+                <span id="adminName">Admin</span>
+                <div class="user-avatar">A</div>
+            </div>
+        </header>
+        
+        <!-- Dashboard Section -->
+        <section class="admin-section" id="dashboardSection">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Today's Sales</p>
+                        <p class="stat-value" id="todaySales">₦0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Today's Orders</p>
+                        <p class="stat-value" id="todayOrders">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💵</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Monthly Sales</p>
+                        <p class="stat-value" id="monthSales">₦0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Total Customers</p>
+                        <p class="stat-value" id="totalCustomers">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Orders & Low Stock -->
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h3>Recent Orders</h3>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Order</th>
+                                    <th>Customer</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentOrders">
+                                <!-- Loaded via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <h3>Low Stock Alert</h3>
+                    <div id="lowStock">
+                        <!-- Loaded via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Products Section -->
+        <section class="admin-section hidden" id="productsSection">
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>Products</h3>
+                    <button class="btn btn-primary" onclick="showAddProductModal()">+ Add Product</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTable">
+                            <!-- Loaded via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Orders Section -->
+        <section class="admin-section hidden" id="ordersSection">
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>All Orders</h3>
+                    <select class="form-select" id="orderFilter" onchange="filterOrders()">
+                        <option value="">All Status</option>
+                        <option value="processing">Processing</option>
+                        <option value="paid">Paid</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <!-- Loaded via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Customers Section -->
+        <section class="admin-section hidden" id="customersSection">
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>Customers</h3>
+                    <button class="btn btn-outline" onclick="exportCustomers()">Export CSV</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Orders</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customersTable">
+                            <!-- Loaded via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="../js/utils.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

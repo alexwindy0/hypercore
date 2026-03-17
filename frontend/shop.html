@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop premium gym sportswear at Hypercore. Men's and women's athletic wear in Lagos, Nigeria.">
+    <title>Shop | Hypercore</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/shop.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <button class="menu-toggle hidden-desktop" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <a href="/" class="logo">HYPER<span>CORE</span></a>
+            
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/shop.html?gender=men" class="nav-link">Men</a></li>
+                    <li><a href="/shop.html?gender=women" class="nav-link">Women</a></li>
+                    <li><a href="/shop.html" class="nav-link active">Shop All</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="header-btn search-toggle" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                
+                <a href="/cart.html" class="header-btn" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span class="cart-badge" style="display: none;">0</span>
+                </a>
+                
+                <a href="/account.html" class="header-btn" aria-label="Account">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="container">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="search-input" placeholder="Search products..." id="searchInput">
+                <button class="search-close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-user-section" id="mobileUserSection">
+            <div class="mobile-user-name">Guest</div>
+            <div class="mobile-user-email">Sign in to access your account</div>
+        </div>
+        
+        <nav>
+            <ul class="mobile-nav-list">
+                <li><a href="/" class="mobile-nav-link">Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+                <li><a href="/shop.html?gender=men" class="mobile-nav-link">Men <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+                <li><a href="/shop.html?gender=women" class="mobile-nav-link">Women <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+                <li><a href="/shop.html" class="mobile-nav-link active">Shop All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+            </ul>
+        </nav>
+        
+        <div class="mobile-menu-divider"></div>
+        
+        <nav>
+            <ul class="mobile-nav-list">
+                <li><a href="/cart.html" class="mobile-nav-link">Cart <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+                <li><a href="/account.html" class="mobile-nav-link">My Account <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+                <li><a href="/orders.html" class="mobile-nav-link">My Orders <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="page-content">
+        <!-- Shop Header -->
+        <section class="shop-header">
+            <div class="container">
+                <h1 class="shop-title" id="shopTitle">All Products</h1>
+                <p class="shop-count" id="shopCount">Loading...</p>
+            </div>
+        </section>
+        
+        <!-- Shop Content -->
+        <section class="shop-content">
+            <div class="container">
+                <div class="shop-layout">
+                    <!-- Filters Sidebar -->
+                    <aside class="filters-sidebar" id="filtersSidebar">
+                        <div class="filters-header">
+                            <h3>Filters</h3>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFilters()">Clear All</button>
+                        </div>
+                        
+                        <!-- Gender Filter -->
+                        <div class="filter-group">
+                            <h4>Gender</h4>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="gender" value="men" onchange="applyFilters()">
+                                    <span>Men</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="gender" value="women" onchange="applyFilters()">
+                                    <span>Women</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-range">
+                                <input type="number" class="form-input" placeholder="Min" id="minPrice" onchange="applyFilters()">
+                                <span>-</span>
+                                <input type="number" class="form-input" placeholder="Max" id="maxPrice" onchange="applyFilters()">
+                            </div>
+                        </div>
+                        
+                        <!-- Size Filter -->
+                        <div class="filter-group">
+                            <h4>Size</h4>
+                            <div class="size-filters">
+                                <button class="size-filter-btn" data-size="S" onclick="toggleSizeFilter(this)">S</button>
+                                <button class="size-filter-btn" data-size="M" onclick="toggleSizeFilter(this)">M</button>
+                                <button class="size-filter-btn" data-size="L" onclick="toggleSizeFilter(this)">L</button>
+                                <button class="size-filter-btn" data-size="XL" onclick="toggleSizeFilter(this)">XL</button>
+                                <button class="size-filter-btn" data-size="XXL" onclick="toggleSizeFilter(this)">XXL</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Sort -->
+                        <div class="filter-group">
+                            <h4>Sort By</h4>
+                            <select class="form-select" id="sortSelect" onchange="applyFilters()">
+                                <option value="newest">Newest First</option>
+                                <option value="price_asc">Price: Low to High</option>
+                                <option value="price_desc">Price: High to Low</option>
+                                <option value="name">Name: A-Z</option>
+                            </select>
+                        </div>
+                    </aside>
+                    
+                    <!-- Mobile Filter Toggle -->
+                    <button class="mobile-filter-toggle" onclick="toggleMobileFilters()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                        Filters
+                    </button>
+                    
+                    <!-- Products Grid -->
+                    <div class="products-section">
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Products loaded via JS -->
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination">
+                            <!-- Pagination loaded via JS -->
+                        </div>
+                        
+                        <!-- Empty State -->
+                        <div class="empty-state hidden" id="emptyState">
+                            <div class="empty-state-icon">🔍</div>
+                            <h3 class="empty-state-title">No products found</h3>
+                            <p class="empty-state-text">Try adjusting your filters or search query</p>
+                            <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">HYPER<span>CORE</span></a>
+                    <p>Premium gym sportswear for athletes who demand excellence.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="/shop.html?gender=men">Men</a></li>
+                        <li><a href="/shop.html?gender=women">Women</a></li>
+                        <li><a href="/shop.html">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/shipping.html">Shipping</a></li>
+                        <li><a href="/returns.html">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hypercore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

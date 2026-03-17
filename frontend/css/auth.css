@@ -1,0 +1,95 @@
+/*
+ * Authentication Pages Styles
+ */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-gray-700) 100%);
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container .logo {
+    display: inline-block;
+    color: var(--color-white);
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.auth-card {
+    background-color: var(--color-white);
+    padding: 40px 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.auth-card h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.auth-card > p {
+    color: var(--color-gray-500);
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.auth-divider {
+    position: relative;
+    margin: 24px 0;
+    text-align: center;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-gray-200);
+}
+
+.auth-divider span {
+    position: relative;
+    background-color: var(--color-white);
+    padding: 0 16px;
+    color: var(--color-gray-500);
+    font-size: 14px;
+}
+
+.auth-note {
+    font-size: 13px;
+    color: var(--color-gray-500);
+    line-height: 1.6;
+}
+
+.auth-note a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.auth-footer {
+    margin-top: 24px;
+    color: var(--color-gray-400);
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+/* Admin Login */
+.admin-key-input {
+    margin-top: 16px;
+}

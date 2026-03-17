@@ -1,0 +1,212 @@
+/*
+ * Account Page Styles
+ */
+
+.account-page {
+    padding: 40px 0 60px;
+}
+
+.account-layout {
+    display: grid;
+    gap: 32px;
+}
+
+/* Sidebar */
+.account-sidebar {
+    padding: 24px;
+    background-color: var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    height: fit-content;
+}
+
+.account-user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.user-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.user-info p {
+    font-size: 14px;
+    color: var(--color-gray-500);
+}
+
+.account-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.account-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.account-nav-link:hover,
+.account-nav-link.active {
+    background-color: var(--color-white);
+    color: var(--color-accent);
+}
+
+.account-nav-link.logout-btn {
+    color: var(--color-error);
+    margin-top: 8px;
+}
+
+/* Content */
+.account-content {
+    min-height: 400px;
+}
+
+.account-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+/* Orders List */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order-card {
+    padding: 20px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.order-number {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.order-date {
+    font-size: 13px;
+    color: var(--color-gray-500);
+}
+
+.order-status {
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.order-status.processing {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-warning);
+}
+
+.order-status.paid {
+    background-color: rgba(0, 102, 255, 0.1);
+    color: var(--color-accent);
+}
+
+.order-status.shipped {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--color-success);
+}
+
+.order-status.delivered {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--color-success);
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.order-item {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.order-item-name {
+    flex: 1;
+}
+
+.order-item-meta {
+    color: var(--color-gray-500);
+}
+
+.order-item-price {
+    font-weight: 600;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.order-total {
+    font-size: 14px;
+}
+
+.order-total span {
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .account-page {
+        padding: 60px 0 80px;
+    }
+    
+    .account-layout {
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+    }
+    
+    .account-sidebar {
+        position: sticky;
+        top: calc(var(--header-height-desktop) + 40px);
+    }
+}
